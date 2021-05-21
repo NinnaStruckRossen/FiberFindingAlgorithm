@@ -15,10 +15,10 @@ step_max = -1;              % If value is '-1', the algorithm will use a step_ma
 
 %% Input measured actual point-spread-function (psf) or theoretical 3D gaussian approximation
 
-% Measured actual psf:
 FileTif= './Data_ourPSF.tif';
+% FileTif= './Data_theoreticalPSF.tif';
 % change "Data_ourPSF" to the measured PSF image of your imaging system and
-% objective above if you are analysing your own small dataset, or to 
+% objective above if you are analysing your own small dataset, or to
 % "Data_theoreticalPSF" if your actual measured PSF is unavailable.
 myImInfo = imfinfo(FileTif,'tiff');
 z_range = 1:length(myImInfo);
@@ -46,7 +46,7 @@ end
 %% Finding traces
 
 [corr,traces,data_applied,corr_backup] = fibtracer(data,psf,data_density,psf_density, ...
-    it_max,stop_factor,angle_max,step_max,l_prio); 
+    it_max,stop_factor,angle_max,step_max,l_prio);
 
 %% Figure
 
